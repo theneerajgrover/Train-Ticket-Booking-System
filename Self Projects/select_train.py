@@ -1,9 +1,8 @@
-import trains_list
 chosen_train = ""
 
-def train():
+def train(trains):
     global chosen_train
-    dict_of_trains = trains_list.trains
+    dict_of_trains = trains
     list_of_trains = list(dict_of_trains.keys())
     while True :
         selection = int(input("\nSELECT THE TRAIN YOU WANT TO TRAVEL IN : (1, 2, 3, 4, 5) : "))
@@ -13,7 +12,7 @@ def train():
                 return train
         
         else :
-            print("INVALID INPUT !!\n")
+            print("\033[1m==== INVALID INPUT !! ====\n\033[1m")
             
 def selected() :
     return chosen_train
