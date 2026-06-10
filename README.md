@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+
+![License](https://img.shields.io/badge/License-MIT-green)
+
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+
 
 # 🚆 Railway Ticket Booking System
 
