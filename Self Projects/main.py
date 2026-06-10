@@ -5,16 +5,19 @@ print("WELCOME TO THE RAILWAY SEAT BOOKING APPLICATION !!")
 login.create_acc()
 route_selection.select_start_end()
 date.select_date()
-trains_list.trains_available()
-trains_list.print_list()
-select_train.train()
+trains = trains_list.trains_available()
+
+trains_list.print_list(trains)
+
+select_train.train(trains)
+
 my_choice = select_train.selected()
 
 print(my_choice)
-seats = seat_availability.seat_availability()
+seats = seat_availability.seat_availability(my_choice, trains)
 
-seat_availability.seat_confirm(seats)
-passengers = passenger_details.details(seats)
+user_seats = seat_availability.seat_confirm(seats)
+passengers = passenger_details.details(user_seats)
 
 # payment = payment_calculation.payment(my_choice, seats)
 
