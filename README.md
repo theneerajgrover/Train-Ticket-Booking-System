@@ -2,7 +2,8 @@
 
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-![Status](https://img.shields.io/badge/Project-In-Process-brightgreen)
+![Status](https://shields.io)
+
 
 
 # 🚆 Railway Ticket Booking System
