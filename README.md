@@ -2,7 +2,6 @@
 
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-![Status](https://shields.io)
 
 
 
