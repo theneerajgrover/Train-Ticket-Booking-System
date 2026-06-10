@@ -1,6 +1,5 @@
 import seat_availability
-def details() :
-    seats = seat_availability.seat_availability()
+def details(seats) :
     passengers_list = {}
     for i in range(seats):
         name = input(f"ENTER NAME OF PASSENGER {i+1}: ")
