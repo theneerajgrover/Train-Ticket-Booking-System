@@ -1,9 +1,9 @@
 import trains_list, select_train
-list1 = trains_list.trains
 seats = 0
-def seat_availability() :
+def seat_availability(my_train, trains) :
     global seats
-    my_train = select_train.selected()
+    
+    list1 = trains
     for i in list1 :
         if my_train == i:
             seats = int(list1[i])
@@ -26,4 +26,4 @@ def seat_confirm(seats) :
                 print("ENTER AGAIN !!\n")
         else :
             print("THAT SEAT COUNT IS NOT AVAILABLE !!\n")
-            
+    return user_seats
