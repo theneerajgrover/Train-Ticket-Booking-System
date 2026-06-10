@@ -8,9 +8,16 @@ date.select_date()
 trains_list.trains_available()
 trains_list.print_list()
 select_train.train()
-seat_availability.seat_availability()
-seat_availability.seat_confirm()
-passengers = passenger_details.details()
-payment = payment_calculation.payment()
-print("AMOUNT TO BE PAID :", payment)
+my_choice = select_train.selected()
+
+print(my_choice)
+seats = seat_availability.seat_availability()
+
+seat_availability.seat_confirm(seats)
+passengers = passenger_details.details(seats)
+
+# payment = payment_calculation.payment(my_choice, seats)
+
+# print("AMOUNT TO BE PAID :", payment)
+print(passengers)
 booking_successful.booking()
