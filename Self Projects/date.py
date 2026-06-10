@@ -1,9 +1,12 @@
 def select_date():
     while True :
-        date = int(input("ENTER DATE : "))
-        month = int(input("ENTER MONTH IN DIGITS : "))
-        if date < 0 or month < 0:
-            print("ENTER VALID DETAILS !!\n")
-
+        date = (input("ENTER DATE : "))
+        month = (input("ENTER MONTH IN DIGITS : "))
+        if date.isdigit() and month.isdigit() :
+            if int(date) < 0 and int(month) < 0:
+                print("ENTER VALID DETAILS !!\n")
+            else :
+                break
+            
         else :
-            break
+            print("ENTER IN NUMERIC FORMAT !!")
