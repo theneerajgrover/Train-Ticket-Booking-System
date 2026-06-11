@@ -1,6 +1,12 @@
 import random
 def trains_available() :
-    trains_list = {"Dibrugarh - Kanyakumari Vivek Express" : random.randint(1, 30) , "Himsagar Express" : random.randint(1, 30) , "Aronai Superfast Express" : random.randint(1, 30) , "Navyug Express" : random.randint(1, 30) , "Avadh Assam Express" : random.randint(1, 30) }
+    trains_list = {
+                    "Dibrugarh - Kanyakumari Vivek Express" : random.randint(1, 100) ,
+                    "Himsagar Express" : random.randint(1, 100) ,
+                    "Aronai Superfast Express" : random.randint(1, 100) ,
+                    "Navyug Express" : random.randint(1, 100) ,
+                    "Avadh Assam Express" : random.randint(1, 100) 
+                }
     return trains_list
 
 def print_list(trains):
