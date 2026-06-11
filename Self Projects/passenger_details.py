@@ -2,7 +2,7 @@ import random
 pnr_list = []
 
 
-def details(seats):
+def details(seats, coach_list):
     passengers_list = {}
     print("\033[1m\n==== ENTER DETAILS CORRECTLY ====\033[0m")
     print("\033[1m🌈 AGE should be an integer\033[0m")
@@ -20,10 +20,9 @@ def details(seats):
                 break
             print("\033[1m\n==== Invalid input! Please enter text for name and numbers for age. ====\033[0m")
         
-        passengers_list[f"Passenger_{i+1}"] = {"Name": name.upper(), "Age": int(age), "PNR NUMBER" : pnr, "Seat Number" : seat_number}
+        passengers_list[f"Passenger_{i+1}"] = {"Name": name.upper(), "Age": int(age), "PNR NUMBER" : pnr, "Seat Number" : seat_number, "Coach": coach_list[i]}
         
     return passengers_list
-
 
 def generate_pnr():
     num1 = random.randint(100,999)
@@ -38,3 +37,4 @@ def generate_seat_number(user_seats) :
     for ticket in range(number):
         seat_number = random.randint(1,50)
         return seat_number
+
