@@ -1,4 +1,4 @@
-import login, route_selection, date, trains_list, select_train, seat_availability, payment_calculation, passenger_details, booking_successful
+import login, route_selection, date, trains_list, select_train, coaches_list, select_coach, seat_availability, seats_input, payment_calculation, passenger_details, booking_successful
 
 print("\033[1m" + "==== WELCOME TO THE RAILWAY SEAT BOOKING APPLICATION !! ====" + "\033[0m")
 
@@ -17,7 +17,13 @@ my_choice = select_train.selected()
 print("\033[1m"+ my_choice + "\033[0m")
 seats = seat_availability.seat_availability(my_choice, trains)
 
-user_seats = seat_availability.seat_confirm(seats)
+coaches_available = coaches_list.coaches()
+
+coach_for_selected_train = coaches_list.print_coaches(coaches_available, my_choice)
+chosen_coach = select_coach.generate_coach_seats(coach_for_selected_train, seats)
+print(chosen_coach)
+
+user_seats = seats_input.seat_confirm(seats)
 passengers = passenger_details.details(user_seats)
 
 # payment = payment_calculation.payment(my_choice, seats)
