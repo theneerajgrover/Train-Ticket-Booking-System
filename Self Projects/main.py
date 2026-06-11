@@ -20,12 +20,19 @@ seats = seat_availability.seat_availability(my_choice, trains)
 coaches_available = coaches_list.coaches()
 
 coach_for_selected_train = coaches_list.print_coaches(coaches_available, my_choice)
-chosen_coach = select_coach.generate_coach_seats(coach_for_selected_train, seats)
-print(chosen_coach)
+coach_list_with_seats = select_coach.generate_coach_seats(coach_for_selected_train, seats)
+print()
+print(coach_list_with_seats)
+
 
 user_seats = seats_input.seat_confirm(seats)
-passengers = passenger_details.details(user_seats)
 
+chosen_coach = select_coach.user_selects_coach(coach_list_with_seats, user_seats)
+# print(chosen_coach)
+
+passengers = passenger_details.details(user_seats, chosen_coach)
+
+# seat_number = passenger_details.generate_seat_number(chosen_coach, user_seats)
 # payment = payment_calculation.payment(my_choice, seats)
 
 # print("AMOUNT TO BE PAID :", payment)
@@ -33,4 +40,5 @@ print("\033[1m\n==== DETAILS OF PASSENGERS ====\n\033[0m")
 
 for pas, details in passengers.items() :
     print(pas, details)
+    
 booking_successful.booking()
