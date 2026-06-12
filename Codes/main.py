@@ -1,44 +1,38 @@
-import login, route_selection, date, trains_list, select_train, coaches_list, select_coach, seat_availability, seats_input, payment_calculation, passenger_details, booking_successful
+import cancel_ticket, booking_history, create_account, login, after_login, exit, book_ticket
 
-print("\033[1m" + "==== WELCOME TO THE RAILWAY SEAT BOOKING APPLICATION !! ====" + "\033[0m")
+print("\033[1m" + "==== WELCOME TO THE RAILWAY SEAT BOOKING APPLICATION !! ====\n" + "\033[0m")
 
-login.create_acc()
-route_selection.select_start_end()
-
-tareek, month = date.select_date()
-trains = trains_list.trains_available()
-
-trains_list.print_list(trains)
-
-select_train.train(trains)
-
-my_choice = select_train.selected()
-
-print("\033[1m"+ my_choice + "\033[0m")
-seats = seat_availability.seat_availability(my_choice, trains)
-
-coaches_available = coaches_list.coaches()
-
-coach_for_selected_train = coaches_list.print_coaches(coaches_available, my_choice)
-coach_list_with_seats = select_coach.generate_coach_seats(coach_for_selected_train, seats)
-print()
-print(coach_list_with_seats)
-
-
-user_seats = seats_input.seat_confirm(seats)
-
-chosen_coach = select_coach.user_selects_coach(coach_list_with_seats, user_seats)
-# print(chosen_coach)
-
-passengers = passenger_details.details(user_seats, chosen_coach)
-
-# seat_number = passenger_details.generate_seat_number(chosen_coach, user_seats)
-# payment = payment_calculation.payment(my_choice, seats)
-
-# print("AMOUNT TO BE PAID :", payment)
-print("\033[1m\n==== DETAILS OF PASSENGERS ====\n\033[0m")
-
-for pas, details in passengers.items() :
-    print(pas, details)
+while True :
+    print("\033[1m" + "==== WHAT DO YOU WANT TO DO TODAY !! ====" + "\033[0m")
+    print("1. Book Train Ticket")
+    print("2. Cancel Train Ticket")
+    print("3. Booking History")
+    print("4. Open Dashboard")
+    print("5. Create Account")
+    print("6. Exit")
     
-booking_successful.booking()
+    user = input("\033[1mENTER YOUR CHOICE : (1,2,3,4,5,6) : \033[0m")
+    if user == "1" :
+        username = book_ticket.book_ticket()
+        after_login.after_login(username)
+        
+    elif user == "2":
+        cancel_ticket.process()
+        username = login.process()
+        
+    elif user == "3" :
+        booking_history.process()
+        
+    elif user == "4":
+        username = login.process()
+        after_login.after_login(username)
+        
+    elif user == "5":
+        username = create_account.process()
+        after_login.after_login(username)
+        
+    elif user == "6":
+        exit.exit_program()
+
+    else :
+        print("\033[1m==== INVALID INPUT !! ====\n\033[1m")
