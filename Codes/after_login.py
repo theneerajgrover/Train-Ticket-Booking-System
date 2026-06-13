@@ -1,6 +1,11 @@
-import cancel_ticket, booking_history, exit
+import cancel_ticket, booking_history, exit, book_ticket
+
+user_logged_in = False
 
 def after_login(username) :
+    
+    global qwuser_logged_in
+    
     while True :
         print("\033[1m==== HEY", username + " ====\n\033[0m")
         print("1. Book Train Ticket")
@@ -10,8 +15,8 @@ def after_login(username) :
         
         user = input("\033[1mENTER YOUR CHOICE : (1,2,3,4,5,6) : \033[0m")
         if user == "1" :
-            # main.book_ticket()
-            pass
+            user_logged_in = True
+            book_ticket.book_ticket(user_logged_in)
             
         elif user == "2":
             cancel_ticket.process()
