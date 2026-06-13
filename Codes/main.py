@@ -1,5 +1,7 @@
 import cancel_ticket, booking_history, create_account, login, after_login, exit, book_ticket
 
+user_logged_in = False
+
 print("\033[1m" + "==== WELCOME TO THE RAILWAY SEAT BOOKING APPLICATION !! ====\n" + "\033[0m")
 
 while True :
@@ -13,15 +15,19 @@ while True :
     
     user = input("\033[1mENTER YOUR CHOICE : (1,2,3,4,5,6) : \033[0m")
     if user == "1" :
-        username = book_ticket.book_ticket()
+        username = book_ticket.book_ticket(user_logged_in)
         after_login.after_login(username)
         
     elif user == "2":
-        cancel_ticket.process()
         username = login.process()
+        cancel_ticket.process()
+        after_login.after_login(username)
         
     elif user == "3" :
-        booking_history.process()
+        print("\033[1m" + "==== LOGIN IS REQUIRED TO SEE BOOKED TICKETS ====\033[0m")
+        username = login.process()
+        booking_history.process(username)
+        after_login.after_login(username)
         
     elif user == "4":
         username = login.process()
