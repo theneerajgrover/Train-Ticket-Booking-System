@@ -13,7 +13,7 @@ def after_login(username) :
         print("3. Booking History")
         print("4. Exit")
         
-        user = input("\033[1mENTER YOUR CHOICE : (1,2,3,4,5,6) : \033[0m")
+        user = input("\033[1mENTER YOUR CHOICE : (1,2,3,4) : \033[0m")
         if user == "1" :
             user_logged_in = True
             book_ticket.book_ticket(user_logged_in)
