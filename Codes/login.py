@@ -1,6 +1,9 @@
 import create_account
+username , logged_in= "", ""
 
 def process() :
+    global username, logged_in
+
     while True :
         username = input("\nENTER YOUR USERNAME : ")
         
@@ -30,8 +33,10 @@ def process() :
                 if username == user:
                     if password == pswd :
                         print("\033[1m" + "\n==== LOGIN SUCCESSFUL ====" + "\033[0m")
+                        logged_in = username
                         return username
                     
                     else :
                         print("\033[1m\n==== INCORRECT PASSWORD !! ====\n\033[1m")
                         break
+                    
