@@ -4,7 +4,7 @@ user_logged_in = False
 
 def after_login(username) :
     
-    global qwuser_logged_in
+    global user_logged_in
     
     while True :
         print("\033[1m==== HEY", username + " ====\n\033[0m")
@@ -19,10 +19,11 @@ def after_login(username) :
             book_ticket.book_ticket(user_logged_in)
             
         elif user == "2":
-            cancel_ticket.process()
+            cancel_ticket.process(username)
+            pass
             
         elif user == "3" :
-            booking_history.process()
+            booking_history.process(username)
             
         elif user == "4":
             exit.exit_program()
