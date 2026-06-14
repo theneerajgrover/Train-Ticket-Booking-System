@@ -20,7 +20,7 @@ while True :
         
     elif user == "2":
         username = login.process()
-        cancel_ticket.process()
+        cancel_ticket.process(username)
         after_login.after_login(username)
         
     elif user == "3" :
